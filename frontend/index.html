@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="result">
+      <h4>Postcode result:</h4>
+      <div id="success" style="display:none">
+        <p>Supported: <b id="resultSupported"></b></p>
+        <p>Your LSOA: <b id="resultLSOA"></b></p>
+      </div>
+      <div id="fail" style="display:none">
+        <p>Error: <b id="error"></b></p>
+      </div>
+    </div>
+    <form id='form' action="http://localhost:9292/postcodes/" method="GET">
+      Postcode:<br>
+      <input id="postcode" type="text" name="postcode" placeholder="IG24 A22"><br>
+      <input type="submit" value="Submit">
+    </form>
+  <script>
+    $(function() {
+      $("#form").submit(function(e) {
+        e.preventDefault();
+
+        let postcode = $('#postcode')[0].value
+        let actionurl = `${e.currentTarget.action}${postcode}`;
+
+        $.ajax({
+          url: actionurl,
+          type: 'get',
+          success: function(data) {
+            $('#fail')[0].style = "display:none"
+            $('#success')[0].style = ""
+            $('#resultSupported')[0].innerText = data.result.supported_lsoa
+            $('#resultLSOA')[0].innerText = data.result.lsoa
+          },
+          error: function(data) {
+            let body;
+            try {
+              body = JSON.parse(data.responseText);
+            } catch(err) {
+              body = {message: 'postcode not found'}
+            }
+
+            $('#success')[0].style = "display:none"
+            $('#fail')[0].style = ""
+            $('#error')[0].innerText = body.message
+          }
+        });
+      });
+    });
+  </script>
+  </body>
+</html>
