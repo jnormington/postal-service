@@ -15,6 +15,8 @@ class PostcodeService
   attr_reader :app
 
   def initialize
+    BaseController.config = Config.new.load_and_validate
+
     @app = Rack::Builder.app do
       run BaseController
       run PingController
