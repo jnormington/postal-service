@@ -22,7 +22,7 @@ RSpec.describe PostcodeController do
         get '/%20'
 
         expect(last_response).to be_bad_request
-        expect_json_content_type
+        expect_content_type_and_cors_headers
         expect(JSON.parse(last_response.body)).to eq(
           'err' => ErrorCodes::POSTCODE_NOT_VALID,
           'message' => 'postcode not valid'
@@ -33,7 +33,7 @@ RSpec.describe PostcodeController do
         get '/F%21A2A'
 
         expect(last_response).to be_bad_request
-        expect_json_content_type
+        expect_content_type_and_cors_headers
         expect(JSON.parse(last_response.body)).to eq(
           'err' => ErrorCodes::POSTCODE_NOT_VALID,
           'message' => 'postcode not valid'
@@ -52,7 +52,7 @@ RSpec.describe PostcodeController do
         get '/F00BAR'
 
         expect(last_response).to be_not_found
-        expect_json_content_type
+        expect_content_type_and_cors_headers
 
         expect(JSON.parse(last_response.body)).to eq(
           'err' => ErrorCodes::POSTCODE_NOT_FOUND,
@@ -72,7 +72,7 @@ RSpec.describe PostcodeController do
         get '/F00BAR'
 
         expect(last_response.status).to eq 500
-        expect_json_content_type
+        expect_content_type_and_cors_headers
 
         expect(JSON.parse(last_response.body)).to eq(
           'err' => ErrorCodes::UNEXPECTED_ERROR,
@@ -97,7 +97,7 @@ RSpec.describe PostcodeController do
         get '/F00BAR'
 
         expect(last_response).to be_ok
-        expect_json_content_type
+        expect_content_type_and_cors_headers
 
         expect(JSON.parse(last_response.body)).to eq(
           'result' => {
@@ -124,7 +124,7 @@ RSpec.describe PostcodeController do
         get '/F00BAR'
 
         expect(last_response).to be_ok
-        expect_json_content_type
+        expect_content_type_and_cors_headers
 
         expect(JSON.parse(last_response.body)).to eq(
           'result' => {
@@ -136,7 +136,8 @@ RSpec.describe PostcodeController do
     end
   end
 
-  def expect_json_content_type
+  def expect_content_type_and_cors_headers
     expect(last_response.headers['Content-Type']).to eq 'application/json'
+    expect(last_response.headers['Access-Control-Allow-Origin']).to eq '*'
   end
 end

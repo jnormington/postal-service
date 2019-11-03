@@ -6,6 +6,11 @@ class PostcodeController < BaseController
   include ErrorCodes
   include ErrorHandler
 
+  before do
+    # Not normal to allow anything normally locked to real host
+    response.headers['Access-Control-Allow-Origin'] = '*'
+  end
+
   get '/:postcode' do
     validator = PostcodeValidator.new(
       params[:postcode],
