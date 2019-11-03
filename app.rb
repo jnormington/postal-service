@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 require 'sinatra/base'
+require 'uk_postcodes_io'
+
+require './app/helpers/error_codes'
+require './app/validators/postcode'
 
 require './app/controllers/base'
 require './app/controllers/ping'

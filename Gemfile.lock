@@ -27,6 +27,7 @@ GEM
       rack-protection (= 2.0.7)
       tilt (~> 2.0)
     tilt (2.0.10)
+    uk_postcodes_io (0.3.0)
 
 PLATFORMS
   ruby
@@ -36,6 +37,7 @@ DEPENDENCIES
   rack-test (~> 1.1)
   rspec (~> 3.9)
   sinatra (~> 2.0)
+  uk_postcodes_io (~> 0.3.0)
 
 BUNDLED WITH
    1.17.3
