@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.postcodes.io/postcodes/SE17QA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.postcodes.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Sun, 03 Nov 2019 21:28:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '734'
+      Connection:
+      - keep-alive
+      X-Gnu:
+      - Michael J Blanchard
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"2de-fFbZ5FI68QYtb0Vz8BvxVkR1iTc"
+    body:
+      encoding: UTF-8
+      string: '{"status":200,"result":{"postcode":"SE1 7QA","quality":1,"eastings":531183,"northings":179317,"country":"England","nhs_ha":"London","longitude":-0.111573,"latitude":51.49758,"european_electoral_region":"London","primary_care_trust":"Lambeth","region":"London","lsoa":"Lambeth
+        036B","msoa":"Lambeth 036","incode":"7QA","outcode":"SE1","parliamentary_constituency":"Vauxhall","admin_district":"Lambeth","parish":"Lambeth,
+        unparished area","admin_county":null,"admin_ward":"Bishop''s","ced":null,"ccg":"NHS
+        Lambeth","nuts":"Lambeth","codes":{"admin_district":"E09000022","admin_county":"E99999999","admin_ward":"E05000416","parish":"E43000212","parliamentary_constituency":"E14001008","ccg":"E38000092","ced":"E99999999","nuts":"UKI45"}}}'
+    http_version:
+  recorded_at: Sun, 03 Nov 2019 21:28:45 GMT
+recorded_with: VCR 5.0.0

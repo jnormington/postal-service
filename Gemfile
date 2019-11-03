@@ -12,4 +12,6 @@ gem 'uk_postcodes_io', '~> 0.3.0'
 group :development, :test do
   gem 'rack-test', '~> 1.1'
   gem 'rspec', '~> 3.9'
+  gem 'vcr', '~> 5.0'
+  gem 'webmock', '~> 3.7'
 end

@@ -2,6 +2,9 @@
 
 require 'rspec'
 require 'rack/test'
+require 'fileutils'
+require 'webmock/rspec'
+require 'vcr'
 
 require './app'
 require './spec/helper/config_helper'
@@ -29,4 +32,9 @@ RSpec.configure do |config|
   config.order = :random
 
   Kernel.srand config.seed
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr'
+  c.hook_into :webmock
 end

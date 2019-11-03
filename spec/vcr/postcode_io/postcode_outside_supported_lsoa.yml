@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.postcodes.io/postcodes/IG110FX
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.postcodes.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Sun, 03 Nov 2019 21:07:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '834'
+      Connection:
+      - keep-alive
+      X-Gnu:
+      - Michael J Blanchard
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"342-rDEonE5qvkCKQ+9yA6GT559K7hQ"
+    body:
+      encoding: UTF-8
+      string: '{"status":200,"result":{"postcode":"IG11 0FX","quality":1,"eastings":546246,"northings":182458,"country":"England","nhs_ha":"London","longitude":0.106576,"latitude":51.52211,"european_electoral_region":"London","primary_care_trust":"Barking
+        and Dagenham","region":"London","lsoa":"Barking and Dagenham 019E","msoa":"Barking
+        and Dagenham 019","incode":"0FX","outcode":"IG11","parliamentary_constituency":"Barking","admin_district":"Barking
+        and Dagenham","parish":"Barking and Dagenham, unparished area","admin_county":null,"admin_ward":"Thames","ced":null,"ccg":"NHS
+        Barking and Dagenham","nuts":"Barking & Dagenham and Havering","codes":{"admin_district":"E09000002","admin_county":"E99999999","admin_ward":"E05000039","parish":"E43000192","parliamentary_constituency":"E14000540","ccg":"E38000004","ced":"E99999999","nuts":"UKI52"}}}'
+    http_version: 
+  recorded_at: Sun, 03 Nov 2019 21:07:28 GMT
+recorded_with: VCR 5.0.0
