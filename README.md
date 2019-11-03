@@ -11,13 +11,16 @@ bundle
 bundle exec rspec
 ```
 
-# Running the service locally
+## Running the service locally
 
-Running the following command
+Running the following command for running the backend API. Which will start the API on port 9292 by default
 
 ```sh
 bundle exec rackup
 ```
+
+Open the following HTML file in `frontend/index.html` in your favourite browser and away you go with the form
+
 
 # Endpoints
 
