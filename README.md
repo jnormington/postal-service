@@ -16,6 +16,7 @@ bundle exec rspec
 Running the following command for running the backend API. Which will start the API on port 9292 by default
 
 ```sh
+cp config.json.example config.json
 bundle exec rackup
 ```
 
