@@ -1,0 +1,13 @@
+{
+  "postcode": {
+    "lsoa_whitelist": [
+      "Southwark",
+      "Lambeth"
+    ],
+
+    "overrides": [
+      "SH241AA",
+      "SH241AB"
+    ]
+  }
+}

@@ -4,6 +4,7 @@ require 'rspec'
 require 'rack/test'
 
 require './app'
+require './spec/helper/config_helper'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

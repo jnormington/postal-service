@@ -3,6 +3,7 @@
 require 'sinatra/base'
 require 'uk_postcodes_io'
 
+require './app/config'
 require './app/helpers/error_codes'
 require './app/validators/postcode'
 
