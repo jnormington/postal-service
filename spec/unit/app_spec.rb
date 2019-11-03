@@ -6,16 +6,19 @@ RSpec.describe PostcodeService do
   let(:config) { Config.new }
 
   describe '#initialize' do
-    before do
-      expect_any_instance_of(Config).to receive(:load_and_validate).and_return(config)
-    end
-
     describe 'config loader' do
       it 'calls config load_and_validate' do
+        expect_any_instance_of(Config).to receive(:load_and_validate).and_return(config)
         PostcodeService.new
       end
 
+      it 'calls config load_and_validate with custom file' do
+        expect_any_instance_of(Config).to receive(:load_and_validate).with('config.test').and_return(config)
+        PostcodeService.new('config.test')
+      end
+
       it 'calls BaseController to set config' do
+        allow_any_instance_of(Config).to receive(:load_and_validate).and_return(config)
         expect(BaseController).to receive(:config=).with(config)
         PostcodeService.new
       end

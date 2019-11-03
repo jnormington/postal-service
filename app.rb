@@ -17,8 +17,8 @@ require './app/controllers/postcode'
 class PostcodeService
   attr_reader :app
 
-  def initialize
-    BaseController.config = Config.new.load_and_validate
+  def initialize(config_file = 'config.json')
+    BaseController.config = Config.new.load_and_validate(config_file)
 
     @app = Rack::Builder.app do
       run BaseController
