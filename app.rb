@@ -10,6 +10,8 @@ require './app/helpers/error_codes'
 
 require './app/models/postcode'
 require './app/models/postcode_result'
+require './app/services/postcodes_io_service'
+
 require './app/validators/postcode'
 
 require './app/controllers/base'
