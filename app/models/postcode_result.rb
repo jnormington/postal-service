@@ -10,4 +10,11 @@ class PostcodeResult
     @lsoa = lsoa
     @err = err
   end
+
+  def ==(other)
+    self.class == other.class &&
+      @err == other.err &&
+      @lsoa == other.lsoa &&
+      @supported_lsoa == other.supported_lsoa
+  end
 end
