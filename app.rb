@@ -9,6 +9,7 @@ require './app/helpers/error_handler'
 require './app/helpers/error_codes'
 
 require './app/models/postcode'
+require './app/models/postcode_result'
 require './app/validators/postcode'
 
 require './app/controllers/base'
