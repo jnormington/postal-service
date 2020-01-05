@@ -12,12 +12,10 @@ class PostcodeController < BaseController
   end
 
   get '/:postcode' do
-    validator = PostcodeValidator.new(
-      params[:postcode],
-      self.class.config.postcode_opts
-    )
+    service = PostcodesIOService.new(Postcode.new(params[:postcode]))
+    proxy = PostcodeProxy.new(service, self.class.config.postcode_opts)
 
-    result = validator.result
+    result = proxy.query
 
     case result.err
     when POSTCODE_NOT_VALID

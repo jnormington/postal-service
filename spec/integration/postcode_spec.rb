@@ -61,7 +61,7 @@ RSpec.describe 'Postcode API' do
     { postcode: 'SE17QA', lsoa: 'Lambeth 036B' }
   ].map do |spec|
     postcode = spec[:postcode]
-    clean_postcode = PostcodeValidator.new(postcode).postcode
+    clean_postcode = Postcode.new(postcode).value
 
     it "returns as supported lsoa for postcode #{postcode}" do
       VCR.use_cassette(vcr_path("postcode_#{clean_postcode}_supported_lsoa")) do
