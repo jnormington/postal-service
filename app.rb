@@ -13,8 +13,6 @@ require './app/models/postcode_result'
 require './app/services/postcodes_io_service'
 require './app/services/postcode_proxy'
 
-require './app/validators/postcode'
-
 require './app/controllers/base'
 require './app/controllers/ping'
 require './app/controllers/postcode'
