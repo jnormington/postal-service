@@ -11,6 +11,7 @@ require './app/helpers/error_codes'
 require './app/models/postcode'
 require './app/models/postcode_result'
 require './app/services/postcodes_io_service'
+require './app/services/postcode_proxy'
 
 require './app/validators/postcode'
 
