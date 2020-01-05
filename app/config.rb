@@ -20,7 +20,7 @@ class Config
 
   def validate_postcode_overrides
     Array(@postcode_opts.overrides).map do |postcode|
-      clean_postcode = PostcodeValidator.new(postcode).postcode
+      clean_postcode = Postcode.new(postcode).value
 
       unless clean_postcode == postcode
         raise "invalid postcode format '#{postcode}' " \

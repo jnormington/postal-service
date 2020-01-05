@@ -7,7 +7,11 @@ require 'uk_postcodes_io'
 require './app/config'
 require './app/helpers/error_handler'
 require './app/helpers/error_codes'
-require './app/validators/postcode'
+
+require './app/models/postcode'
+require './app/models/postcode_result'
+require './app/services/postcodes_io_service'
+require './app/services/postcode_proxy'
 
 require './app/controllers/base'
 require './app/controllers/ping'
